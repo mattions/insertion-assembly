@@ -16,12 +16,18 @@ RUN apt-get update && apt-get install -y ghostscript \
 
 RUN conda install -y -c bioconda samtools bedtools blat numpy
 
+# - cap3 (it needs a commercial license)
+# - repeatmasker (it needs a commercial license for the repeatlibrary)
+
+RUN mkdir /code
+
+WORKDIR /code
+
 # - fastq_to_fasta (from http://nebc.nerc.ac.uk/downloads/scripts/parse/fastq_to_fasta.py)
 
 RUN wget http://nebc.nerc.ac.uk/downloads/scripts/parse/fastq_to_fasta.py
 
-# - cap3 (it needs a commercial license)
-# - repeatmasker (it needs a commercial license for the repeatlibrary)
 
+ADD . /code
 
 ENV PATH $PATH:.
