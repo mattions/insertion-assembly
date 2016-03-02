@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y ghostscript \
 # - bedtools | bioconda
 # - blat | bioconda
 
-RUN conda install -y -c samtools bedtools blat numpy
+RUN conda install -y -c bioconda samtools bedtools blat numpy
 
 # - fastq_to_fasta (from http://nebc.nerc.ac.uk/downloads/scripts/parse/fastq_to_fasta.py)
 
